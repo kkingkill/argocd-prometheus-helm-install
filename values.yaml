@@ -1,0 +1,43 @@
+alertmanager:
+  ingress:
+    enabled: true
+    hosts:
+      - monitor.nft-engineer.moala.fun
+    path: /alertmanager
+
+  storage:
+    volumeClaimTemplate:
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 3Gi
+
+grafana:
+  ingress:
+    enabled: true
+    hosts:
+      - monitor.nft-engineer.moala.fun
+    path: /
+
+  persistence:
+    type: pvc
+    enabled: true
+    #storageClassName: gp2
+    accessModes: ["ReadWriteOnce"]
+    size: 5Gi
+
+prometheus:
+  ingress:
+    enabled: true
+    hosts:
+      - monitor.nft-engineer.moala.fun
+    path: /prometheus
+
+  storage:
+    volumeClaimTemplate:
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi
