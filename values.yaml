@@ -1,8 +1,12 @@
+
+namespaceOverride: "monitoring"
+
+
 alertmanager:
   ingress:
     enabled: true
     hosts:
-      - monitor.nft-engineer.moala.fun
+      - monitor.test
     path: /alertmanager
 
   storage:
@@ -14,10 +18,12 @@ alertmanager:
             storage: 3Gi
 
 grafana:
+  adminPassword: gra@07@5A_@
+ 
   ingress:
     enabled: true
     hosts:
-      - monitor.nft-engineer.moala.fun
+      - monitor.test
     path: /
 
   persistence:
@@ -31,7 +37,7 @@ prometheus:
   ingress:
     enabled: true
     hosts:
-      - monitor.nft-engineer.moala.fun
+      - monitor.test
     path: /prometheus
 
   storage:
